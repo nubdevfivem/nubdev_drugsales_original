@@ -1,0 +1,327 @@
+@import url(https://fonts.googleapis.com/css?family=Mitr);
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mitr", sans-serif;
+    font-size: 100%;
+    height: 100%;
+    zoom: 1;
+    display: none;
+}
+
+.skills-bar-container {
+    position: absolute;
+    width: 100%;
+    /* min-width: 300px; */
+    bottom: -5%;
+    right: 1%;
+    list-style: none;
+}
+
+.skills-bar-container {
+    position: absolute;
+    width: 13%;
+    /* min-width: 300px; */
+    bottom: 1%;
+    right: 1%;
+    list-style: none;
+}
+
+.skills-bar-container li.time {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+}
+
+#progress-time {
+    background-color: #c0392b;
+}
+
+h1,
+h3 {
+    display: block;
+    margin: 10px;
+}
+
+h1 {
+    color: #666;
+    font-weight: bold;
+}
+
+h3 {
+    color: #888;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+a {
+    color: white;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+blockquote {
+    color: #888;
+    margin: 20px 0 20px 20px;
+}
+
+blockquote:before,
+blockquote:after {
+    content: '"';
+}
+
+input[type="button"] {
+    background: blue;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    width: 100px;
+    height: 45px;
+    padding: 5px;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input.discard {
+    background: maroon;
+}
+
+
+/*.intro {
+	 position: relative;
+	 margin: 10px;
+	 width: 40%;
+	 height: auto;
+	 color: #444;
+}
+*/
+
+.deck {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    /* margin: 3em; */
+    width: auto;
+    /* left: 35%;
+    top: 35%; */
+    height: auto;
+    /* margin: 0 auto; */
+    /* margin: 0 auto; */
+}
+
+.title {
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    position: absolute;
+    top: -110px;
+    font-size: 22px;
+    font-weight: 100;
+    background-color: rgba(0, 0, 0, 0.326);
+}
+
+#time {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: -62px;
+    font-size: 22px;
+    display: none;
+    font-weight: 100;
+    color: white;
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.326);
+}
+
+.btn-random {
+    position: absolute;
+    display: none;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+    border: 0px;
+    margin-top: 170px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Mitr", sans-serif;
+    width: 100px;
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    font-weight: 100;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    color: #000;
+    width: 150px;
+    height: 200px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.suit {
+    position: relative;
+    color: #aaa;
+    text-align: left;
+}
+
+.card .face {
+    position: absolute;
+    /* border: 1px solid #333; */
+    color: white;
+    width: 150px;
+    height: 210px;
+    line-height: 3em;
+    text-align: center;
+    text-transform: capitalize;
+    /* border-radius: 10px; */
+    box-shadow: 4px 4px 10px #555;
+    /* Slim drop shadow so as not to bleed into the bounding box of the next card */
+}
+
+.card .front {
+    background-image: url('./frontcard.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    font-size: 50px;
+    padding: 20% 0px;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: all 0.4s ease-in-out;
+    backface-visibility: visible;
+    z-index: 10;
+}
+
+
+/* .card:nth-child(1) {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+    animation: drop1 0.5s ease-in;
+}
+
+.card:nth-child(2) {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+    animation: drop2 0.5s ease-in;
+}
+
+.card:nth-child(3) {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    animation: drop3 0.5s ease-in;
+}
+
+.card:nth-child(4) {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(20deg);
+    animation: drop4 0.5s ease-in;
+}
+
+.card:nth-child(5) {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(40deg);
+    animation: drop5 0.5s ease-in;
+} */
+
+
+/* Deal cards and apply some random spin */
+
+@keyframes drop1 {
+    0% {
+        transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(-25deg);
+    }
+    100% {
+        transform: scale(0.97, 0.97) rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+    }
+}
+
+@keyframes drop2 {
+    0% {
+        transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(-10deg);
+    }
+    100% {
+        transform: scale(0.97, 0.97) rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+    }
+}
+
+@keyframes drop3 {
+    0% {
+        transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(-50deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(50deg) rotateZ(25deg);
+    }
+    100% {
+        transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+
+.zoom {
+    animation: zoom 3s;
+    z-index: 999999;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.7);
+    }
+    30% {
+        transform: scale(1.7);
+    }
+}
+
+.card .back {
+    background-image: url(./backcard.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: rotateX(0deg) rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+    backface-visibility: hidden;
+    z-index: 5;
+    height: 210px;
+}
+
+
+/* Flip the card and apply easing */
+
+.card.flip .front {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+    backface-visibility: hidden;
+    z-index: 900;
+}
+
+.card.flip .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+    backface-visibility: visible;
+    z-index: 1000;
+}
